@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content=""/>
+        <title>Post | {{parameters['blog_title']}}</title>
+        {% extends 'base.html' %}
+{% block body %} 
+
+    <!-- Page Header -->
+<header class="masthead" style="background-image: url('/static/assets/img/posts.jpg')">
+      <div class="overlay"></div>
+      <div class="container"> 
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1 class="text-capitalize" style="color: black;"><strong>{{post.title}}</strong></h1>
+              <h2 class="subheading" style="color: black;">{{post.tagline}}</h2>
+              <span class="meta text-dark">Posted by
+                <a href="#" class="text-danger">Admin</a>
+                on {{post.date}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <pre class="text-wrap" style="font-family:Verdana, Geneva, Tahoma, sans-serif">{{post.content}}
+            </pre>
+            <pre>
+              <code class="language-{{post.language}} line-numbers">
+                {{post.code}}
+              </code>              
+            </pre>
+           <pre class="text-break" style="font-family:Verdana, Geneva, Tahoma, sans-serif">{{post.description}}</pre>
+          </div>
+        </div>
+      </div>
+    </article>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src=" {{ url_for('static', filename='js/scripts.js') }} "></script>
+        
+         {% endblock body %}

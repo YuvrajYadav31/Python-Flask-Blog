@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>AdminPanel | {{parameters['blog_title']}}</title>
+{% extends 'base.html' %}
+{% block body %} 
+     
+        <!-- Page Header-->
+        <header class="masthead mb-0" style="background-image: url(static/assets/img/admin.jpg) ">
+
+           
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Admin Panel</h1>
+                            <span class="subheading">Manage your posts and change them</span>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    <strong>{{message}}</strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    </button>
+  </div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Post preview-->
+                    <h1>Basic Actions</h1>
+                    <a href="/edit/0"><button class="btn btn-info">ADD A NEW POST</button></a>
+                    <a href="/logout"><button class="btn btn-dark">LOGOUT</button></a>
+                    <hr>
+                    <h1>Upload a file</h1>
+                    <form action="/uploader" method="post" enctype="multipart/form-data">
+                        <input type="file" name="File1">
+                        <button type="submit" class="btn btn-dark">Upload</button>
+                    </form>
+                        <hr>
+                    <h1>Edit Posts</h1>
+                    <hr>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Sno</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for post in posts %}
+                        <tr>
+                            <th scope="row">{{post.sno}}</th>
+                            <td>{{post.title}}</td>
+                            <td>{{post.date}}</td>
+                            <td><a href="/edit/{{post.sno}}"><button class="btn btn-secondary ">Edit</button></a></td>
+                            <td><a href="/delete/{{post.sno}}"><button class="btn btn-danger ">Delete </button></a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+        </div>
+    </div>
+    <!-- Footer-->
+    
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src=" {{ url_for('static', filename='js/scripts.js') }} "></script>
+{% endblock body %}

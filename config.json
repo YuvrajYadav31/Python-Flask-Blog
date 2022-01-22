@@ -1,0 +1,26 @@
+{
+    "parameters":
+        {
+          "server": "True",
+          "local_uri":"mysql://root:@localhost:3306/codingshinobi",
+          "prod_uri":"mysql://root:@localhost:3306/codingshinobi",
+          "fb_url":"https://www.facebook.com/Thecodingshinobi-103650028858668",
+          "tw_url":"https://twitter.com/Thecodingshino1",
+          "gh_url":"https://github.com/Thecodingshinobi",
+          "blog_name":" Coding Shinobi",
+          "blog_title":"CodingShinobi",
+          "sub_head":" Programmers Place!",
+          "gmail-user":"codingshinobi111@gmail.com",
+          "gmail-password":"oneforall100%",
+          "about-text":"Hi my name is Yuvraj yadav. I live in Faridabad. Currently, I am pursuing BCA from DAV Centenary College, Faridabad. I love programming and making projects. My goal is become a successful programmer.",
+          "no_of_post":2,
+          "admin_user":"codingshinobi111",
+          "admin_password":"oneforall",
+          "upload_location":"C:\\Users\\yuvra\\Desktop\\coding shinobi\\static\\uploaded files"
+          
+        }
+
+
+
+
+}
