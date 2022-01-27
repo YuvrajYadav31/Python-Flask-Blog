@@ -10,7 +10,7 @@ from datetime import datetime
 with open('config.json', 'r') as c:
     parameters = json.load(c)["parameters"]
 
-local_server = True 
+local_server = False 
 app = Flask(__name__,template_folder="template")
 app.secret_key = 'super-secret-key'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
