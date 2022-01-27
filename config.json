@@ -3,7 +3,7 @@
         {
           "server": "True",
           "local_uri":"mysql://root:@localhost:3306/codingshinobi",
-          "prod_uri":"mysql://root:@localhost:3306/codingshinobi",
+          "prod_uri":"postgres://mbxjdtqjkospsu:fac48f090adafbc59b3ba837a41cfcb67a6309f7fe4fc4ebc81d83f9c2161c9f@ec2-34-194-171-47.compute-1.amazonaws.com:5432/dane77n0tc30r6",
           "fb_url":"https://www.facebook.com/Thecodingshinobi-103650028858668",
           "tw_url":"https://twitter.com/Thecodingshino1",
           "gh_url":"https://github.com/Thecodingshinobi",
